@@ -5,12 +5,27 @@
 #' @param title diaply title name
 #' @param name UI TabName
 #' @export
-#' 
+#'
 
 
 fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_fieldbooks"){
-   
+
   #body <- dashboardBody(
+
+  #shiny::tagList(
+  shinydashboard::tabItem(tabName = name, title,
+
+            shiny::fluidRow(
+              shiny::column(width = 4,
+                            shinydashboard::box(
+                       title = "HIDAP Installation Manual", width = NULL, solidHeader = TRUE, status = "warning",
+                       "", collapsible = TRUE,
+
+                       shiny::fluidRow(
+                         shiny::column(6,
+
+                                  shiny::HTML("<b> Installation Manual (english):</b>"),
+
   
   shinydashboard::tabItem(tabName = name, h2(title),   
   
@@ -24,9 +39,10 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
                            column(6,  
                                   
                                   shiny::HTML("<b>English</b>"),
+
                                   shiny::br(),
                                   shiny::actionButton("dochidap_install_launch_en", "Open",
-                                                          icon = icon("folder-open", lib = "glyphicon"),
+                                                          icon = shiny::icon("folder-open", lib = "glyphicon"),
                                                           width = "100px",
                                                           style="color: #fff; background-color: #337ab7; border-color: #2e6da4"
                                                           ),
@@ -35,16 +51,31 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
                                   shiny::HTML("<b>Spanish</b>"),
                                   shiny::br(),
                                   shiny::actionButton("dochidap_install_launch_es", "Open",
-                                                      icon = icon("folder-open", lib = "glyphicon"),
+                                                      icon = shiny::icon("folder-open", lib = "glyphicon"),
                                                       width = "100px",
                                                       style="color: #fff; background-color: #337ab7; border-color: #2e6da4"
                                   )#,
 
+
+
+
+
                             )#,
-                           
-                           
+
+
                        )
                      ),
+
+
+                     shinydashboard::box(
+                       title = "HIDAP Navigate Manual", width = NULL, solidHeader = TRUE, status = "warning",
+                       "", collapsible = TRUE,
+
+                       shiny::fluidRow(
+                         shiny::column(6,
+
+                                shiny::HTML("<b> Navigate Manual (english):</b>"),
+
                      
                      box(
                        title = "HIDAP user's manual", width = NULL, solidHeader = TRUE, status = "warning",
@@ -54,9 +85,10 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
                          column(6,  
                                 
                                 shiny::HTML("<b>English</b>"),
+
                                 shiny::br(),
                                 shiny::actionButton("dochidap_navig_launch_en", "Open",
-                                                    icon = icon("folder-open", lib = "glyphicon"),
+                                                    icon = shiny::icon("folder-open", lib = "glyphicon"),
                                                     width = "100px",
                                                     style="color: #fff; background-color: #337ab7; border-color: #2e6da4"
                                 ),
@@ -65,18 +97,47 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
                                 shiny::HTML("<b>Spanish</b>"),
                                 shiny::br(),
                                 shiny::actionButton("dochidap_navig_launch_es", "Open",
-                                                    icon = icon("folder-open", lib = "glyphicon"),
+                                                    icon = shiny::icon("folder-open", lib = "glyphicon"),
                                                     width = "100px",
                                                     style="color: #fff; background-color: #337ab7; border-color: #2e6da4"
                                 )#,
-                                
-                                
-                                
+
+
+
                          )#,
-                         
-                         
+
+
                        )
                      ),
+
+
+                     shinydashboard::box(
+                       title = "PVS Documentation", width = NULL, solidHeader = TRUE, status = "primary",
+                       "Participatory Varietal Selection Documentation (PVS)", collapsible = TRUE,
+
+                       shiny::fluidRow(
+                         shiny::column(6,  shiny::actionButton("docpvsdic_launch", "Open",
+                                                        icon = shiny::icon("folder-open", lib = "glyphicon"),
+                                                        width = "100px",
+                                                        style="color: #fff; background-color: #337ab7; border-color: #2e6da4"
+                         ))
+                       )
+                      )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             
                      box(
                        title = "Participatory Varietal Selection Documentation", width = NULL, solidHeader = TRUE, status = "primary",
@@ -123,12 +184,13 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
                      
                      
                      
+
                      # box(
                      #   width = NULL, background = "black",
                      #   "Otros documentos 2"
                      # )
               ) #,
-              
+
               # column(width = 4,
               #        box(
               #          status = "warning", width = NULL,
@@ -143,7 +205,7 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
               #          "Otros documentos 5"
               #        )
               # ),
-              # 
+              #
               # column(width = 4,
               #        box(
               #          title = "Title 2", width = NULL, solidHeader = TRUE,
@@ -157,11 +219,13 @@ fbdocs_ui <- function(type = "tab", title = "HIDAP Documents", name= "docshidap_
             )
       )
 
+ # )
+
 
 }
 
 
 
-# 
+#
 # # Preview the UI in the console
 # shinyApp(ui = ui, server = function(input, output) { })

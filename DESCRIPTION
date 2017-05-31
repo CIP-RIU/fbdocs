@@ -1,12 +1,17 @@
 Package: fbdocs
 Title: Just launch hidap documents
-Version: 1.0.0
-Authors@R: person("Omar", "Benites", email = "obacc07@gmail.com", role = c("aut", "cre"))
-Description: Documentation in open source softwares is very important. The 'fbdocs' package aim to make a full list of all
-             modules, files and protocolar documents in CIP experiments.  
+Version: 1.0.4
+Authors@R: c(
+  person("Omar", "Benites", email = "obacc07@gmail.com", role = c("aut", "cre")),
+  person("Reinhard", "Simon", email = "rsimon64@gmail.com", role = c("aut", "ctb"))
+  )
+Description: Documentation in open source softwares is very important. The 'fbdocs' package aims to make a full list of all
+             modules, files and protocol documents of CIP experiments.  
 Depends:
     R (>= 3.3.1)
+Imports:
+  shiny, shinydashboard
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
